@@ -15,16 +15,12 @@ If you are familiar with GetModuleHandle, GetProcAddress, and Syscall on Windows
 ```go
 ntdll, err := heaven.GetModuleHandle("ntdll.dll")
 if err != nil {
-  fmt.Println(err)
-  fmt.Scanln()
-  os.Exit(1)
+  log.Fatal(err)
 }
 
 fn, err := heaven.GetProcAddress(ntdll, "NtReadVirtualMemory")
 if err != nil {
-  fmt.Println(err)
-  fmt.Scanln()
-  os.Exit(1)
+  log.Fatal(err)
 }
 
 h := (uint64)(heaven.GetSelfHandle())
@@ -57,7 +53,7 @@ There's already alot of great publications on Heaven's Gate, so I will just you 
 
 ## Why
 
-I asked myself serveral times. 
+I asked myself several times. 
 
 ## Other References
 
